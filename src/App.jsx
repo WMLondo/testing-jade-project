@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "boxicons";
+import TextBox from "./components/ui/TextBox";
 import Button from "./components/ui/Button";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 
   return (
     <div className="App">
+      <TextBox placeholder="Placeholder"/>
     </div>
   );
 }
