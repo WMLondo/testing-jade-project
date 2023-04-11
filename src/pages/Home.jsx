@@ -1,13 +1,12 @@
-import React from 'react'
-import StyleLink, {StyleNavLink } from "../components/ui/Link/Link";
+import React from "react";
+import { RadioButton } from "../components/ui/Input/Input";
 
 const Home = () => {
   return (
-    <div className="App">
-     <StyleLink to="/" textDecoration="underline">Hola mundo</StyleLink>
-     <StyleNavLink to="/">Hola nuevo mundo</StyleNavLink>
+    <div>
+      <RadioButton value="Seleccion" name="radio-butotn" label="hola-mundo" />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
