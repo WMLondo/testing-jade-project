@@ -41,8 +41,7 @@
   --secondary-color: #2C2C2C;
   --secondary-color-bs: #454545;
   --secondary-color-bm: #5E5E5E;
-  --secondary-color-bl: #5E5E5E;
-  --secondary-color-bxl: #787878;
+  --secondary-color-bl: #787878;
   --tertiary-color-hdm: #10A282;
   --tertiary-color-hds: #10A26A;
   --tertiary-color: #10A252;
@@ -79,6 +78,7 @@
 body {
   margin: 0;
   font-family: "PTSans", sans-serif;
+  font-size: 16px;
 }
 
 /**
