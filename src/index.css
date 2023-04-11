@@ -35,24 +35,6 @@
       url("assets/fonts/ptsans-bolditalic-webfont.woff") format("woff");
 }
 
-:root {
-  --primary-color: #ffffff;
-  --secondary-color-bd: #121212;
-  --secondary-color: #2C2C2C;
-  --secondary-color-bs: #454545;
-  --secondary-color-bm: #5E5E5E;
-  --secondary-color-bl: #787878;
-  --tertiary-color-hdm: #10A282;
-  --tertiary-color-hds: #10A26A;
-  --tertiary-color: #10A252;
-  --tertiary-color-hs: #10A23A;
-  --tertiary-color-disable: #52A384;
-  --danger-color: #A21010;
-  --danger-color-hs:#A22910;
-  --danger-color-bds:#8A0E0E;
-  --danger-color-s70-b74:#BD3939;
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

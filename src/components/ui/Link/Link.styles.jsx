@@ -4,15 +4,15 @@ import { Link, NavLink } from "react-router-dom";
 const handleColorValue = (color) => {
   switch (color) {
     case "primary":
-      return `color: var(--primary-color);`;
+      return `color: ${({ theme: { colors } }) => colors.neutralColorMax};`;
     case "secondary":
-      return `color: var(--secondary-color);`;
+      return `color: ${({ theme: { colors } }) => colors.neutralColorMin100};`;
     case "tertiary":
-      return `color: var(--tertiary-color);`;
+      return `color: ${({ theme: { colors } }) => colors.primaryColor};;`;
     case "danger":
-      return `color: var(--danger-color);`;
+      return `color: ${({ theme: { colors } }) => colors.dangerColor}`;
     default:
-      return `color: var(--tertiary-color);`;
+      return `color: ${({ theme: { colors } }) => colors.primaryColor};;`;
   }
 };
 
@@ -20,16 +20,16 @@ const globalLinkStyle = css`
   font-size: 13px;
   font-weight: 400;
   ${(props) => handleColorValue(props.color)}
-  text-decoration: ${(props) => (props.textDecoration || "none")};
+  text-decoration: ${(props) => props.textDecoration || "none"};
 
   &:hover:enabled {
-    color: var(--tertiary-color-hs);
+    color: ${({ theme: { colors } }) => colors.primaryColor500};
   }
   &:active {
-    color: var(--tertiary-color);
+    color: ${({ theme: { colors } }) => colors.primaryColor};
   }
   &:disabled :a[disabled] {
-    color: var(--secondary-color-bl);
+    color: var(--neutral-color-min-400);
   }
 `;
 

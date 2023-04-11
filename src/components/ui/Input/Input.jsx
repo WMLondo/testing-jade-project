@@ -1,24 +1,32 @@
 import {
-  Input,
+  Field,
   RadioContainer,
   RadioInput,
   RadioCheckmark,
+  CheckboxContainer,
+  CheckboxInput,
+  CheckboxLabel,
+  CheckboxCheckmark,
 } from "./Input.styles";
 
-export default Input;
+export default Field;
 
-export const RadioButton = ({ value, name, checked, onChange, label }) => {
+export const RadioButton = (props) => {
   return (
     <RadioContainer>
-      <RadioInput
-        value={value}
-        name={name}
-        checked={checked}
-        onChange={onChange}
-      />
+      <RadioInput {...props} />
       <RadioCheckmark />
-      {label}
+      {props.label}
     </RadioContainer>
   );
 };
+
+export const Checkbox = (props) => (
+  <CheckboxContainer>
+    <CheckboxInput {...props} />
+    <CheckboxCheckmark />
+    <CheckboxLabel>{props.label}</CheckboxLabel>
+  </CheckboxContainer>
+);
+
 export {};
