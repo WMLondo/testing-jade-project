@@ -1,47 +1,48 @@
 import React from "react";
-import ListElement from "../ui/ListElement";
-import ImageElement, { Logo } from "../ui/ImageElement";
+import ListElement from "../ui/ListElement/ListElement";
 import classes from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import { StyleNavLink } from "../ui/Link/Link";
+import { Logo } from "../ui/Logo/Logo.style";
 
 const NavBar = () => {
   return (
     <ul className={classes.container}>
       <ListElement>
-        <NavLink className={classes.link} to="/ofertas">
+        <StyleNavLink className={classes.link} to="/ofertas">
           Ofertas
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
-        <NavLink className={classes.link} to="/novedades">
+        <StyleNavLink className={classes.link} to="/novedades">
           Novedades
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
-        <NavLink className={classes.link} to="/servicios">
+        <StyleNavLink className={classes.link} to="/servicios">
           Servicios
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
-        <NavLink className={classes.link} to="/categorias">
+        <StyleNavLink className={classes.link} to="/categorias">
           Categorias
           <span className={classes.icon}>
-            <i className="bx bx-chevron-down"></i>
+            <box-icon name="chevron-down"></box-icon>
           </span>
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
-        <NavLink className={classes.link} to="/">
+        <StyleNavLink className={classes.link} to="/">
           <Logo />
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
-        <NavLink className={classes.link} to="/marcas">
+        <StyleNavLink className={classes.link} to="/marcas">
           Marcas
           <span className={classes.icon}>
-            <i className="bx bx-chevron-down"></i>
+            <box-icon name="chevron-down"></box-icon>
           </span>
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
         <div className={classes.link}>
@@ -52,20 +53,20 @@ const NavBar = () => {
         </div>
       </ListElement>
       <ListElement>
-        <NavLink to="/iniciar-sesion" className={classes.link}>
+        <StyleNavLink to="/iniciar-sesion" className={classes.link}>
           Iniciar Sesion{" "}
           <span className={classes.icon}>
-            <i className="bx bx-user-circle"></i>
+            <box-icon name="search"></box-icon>
           </span>
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
       <ListElement>
-        <NavLink to="/carrito" className={classes.link}>
+        <StyleNavLink to="/carrito" className={classes.link}>
           <span className={classes.icon}>
-            <i className="bx bx-basket"></i>
+            <box-icon name="basket"></box-icon>
           </span>
           Cesta
-        </NavLink>
+        </StyleNavLink>
       </ListElement>
     </ul>
   );

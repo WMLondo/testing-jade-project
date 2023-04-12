@@ -1,13 +1,20 @@
 import "./App.css";
 import "boxicons";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Theme from "./Theme/Theme";
+import Layout from "./pages/Layout/PageLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout />,
+    children: [
+      {
+        default: true,
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
