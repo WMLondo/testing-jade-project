@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   padding: 14px 28px;
-  font-size: 16px;
+  font-size: ${({ theme: { fontSize } }) => fontSize.m};
   font-weight: 700;
   font-family: "PTSans", sans-serif;
   color: ${({ theme: { colors } }) => colors.neutralColorMax};

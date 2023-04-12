@@ -1,6 +1,5 @@
-import React from 'react'
-import { StyleLink,StyleNavLink } from './Link.styles'
-
+import React from "react";
+import { StyleLink, StyleNavLink, Tag } from "./Link.styles";
 
 export default StyleLink;
-export{StyleNavLink}
+export { StyleNavLink, Tag };

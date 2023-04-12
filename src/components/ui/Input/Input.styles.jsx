@@ -5,7 +5,7 @@ const handleValidationState = (isValid) => {
   switch (isValid) {
     case true:
       return `
-      border: 1px solid ${({theme: {colors}}) => colors.primaryColor};;
+      border: 1px solid ${({ theme: { colors } }) => colors.primaryColor};;
       box-shadow: inset 0px 0px 10px rgba(16, 162, 106, 0.25);
       `;
     case false:
@@ -22,13 +22,15 @@ const handleValidationState = (isValid) => {
 export const Field = styled.input`
   width: ${(props) => props.width || "261px"};
   height: ${(props) => props.height || "43px"};
-  font-size: 1rem;
+  font-size: ${({ theme: { fontSize } }) => fontSize.m};
   color: ${({ theme: { colors } }) => colors.neutralColorMin100};
   background: ${({ theme: { colors } }) => colors.neutralColorMax};
   padding: 0px 8px;
   font-weight: 400;
   ${(props) => handleValidationState(props.isValid)}
   border-radius: 5px;
+  border: 1px solid ${({ theme: { colors } }) => colors.neutralColorMin400};
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
 
   &:hover:enabled {
     border: 1px solid ${({ theme: { colors } }) => colors.primaryColor500};
@@ -54,7 +56,7 @@ export const RadioContainer = styled.label`
   align-items: center;
   margin-bottom: 10px;
   font-family: "PT Sans", sans-serif;
-  font-size: 16px;
+  font-size: ${({ theme: { fontSize } }) => fontSize.m};
   line-height: 24px;
 `;
 
@@ -143,54 +145,144 @@ export const CheckboxLabel = styled.span`
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: ${({ theme: { fontSize } }) => fontSize.m};
   line-height: 24px;
 `;
 
+//Custom Checkbox
 export const ComboBoxContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
   position: relative;
 `;
 
-export const ComboBoxLabel = styled.label`
-  display: block;
-  font-family: "PT Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 23px;
-  color: #fff;
-  margin-bottom: 5px;
-`;
-
-export const ComboBoxInputWrapper = styled.div`
+export const ComboBoxSelect = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
   align-items: center;
-  position: relative;
-`;
-
-export const ComboBoxInput = styled.input`
-  flex: 1;
-  padding: 8px;
-  background: #ffffff;
-  border: 1px solid ${({ theme: { colors } }) => colors.neutralColorMin400};
-  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+  width: ${(props) => props.width || "261px"};
+  height: ${(props) => props.height || "43px"};
+  font-size: ${({ theme: { fontSize } }) => fontSize.m};
+  color: ${({ theme: { colors } }) => colors.neutralColorMin100};
+  background: ${({ theme: { colors } }) => colors.neutralColorMax};
+  padding: 0px 8px;
+  font-weight: 400;
+  ${(props) => handleValidationState(props.isValid)}
   border-radius: 5px;
-`;
-
-export const ComboBoxDivider = styled.div`
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
   border: 1px solid ${({ theme: { colors } }) => colors.neutralColorMin400};
-  margin: 10px 0;
+
+  &:hover {
+    border: 1px solid ${({ theme: { colors } }) => colors.primaryColor500};
+    box-shadow: inset 0px 0px 10px rgba(16, 162, 82, 0.25);
+  }
+  &:focus {
+    outline: none;
+    border: 1px solid ${({ theme: { colors } }) => colors.primaryColor300};
+    box-shadow: inset 0px 0px 10px rgba(16, 162, 106, 0.25);
+  }
+  &:disabled,
+  input[disabled] {
+    background-color: ${({ theme: { colors } }) => colors.neutralColorMax50};
+    &hover {
+      border: 1px solid ${({ theme: { colors } }) => colors.neutralColorMin300};
+      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
 `;
 
-export const ComboBoxIcon = styled.div`
+export const ComboBoxSelectedOption = styled.span`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  color: ${({ theme: { colors } }) => colors.neutralColorMin};
+`;
+
+export const ComboBoxButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  width: auto;
+  height: auto;
+  padding-right: 8px;
+  border: none;
+  cursor: pointer;
+  border-left: 1px solid ${({ theme: { colors } }) => colors.neutralColorMin400};
+
+  &:first-child {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const ComboBoxOptionsContainer = styled.ul`
+  max-height: ${(props) => props.height || "172px"};
+  width: 100%;
+  display: flex;
   position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 230px;
-  top: 34px;
-  /* Reemplaza la siguiente URL con la ubicación del ícono que quieras usar */
-  background-image: url("icono.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 18px;
+  ${(props) =>
+    props.selectedHeight
+      ? `top: calc(${props.selectedHeight} + 8px)`
+      : `top:calc(43px + 8px)`};
+  flex-direction: column;
+  justify-content: stretch;
+  padding: 0;
+  display: ${({ opened }) => (opened ? "flex" : "none")};
+  background-color: ${({ theme: { colors } }) => colors.neutralColorMax};
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  z-index: 1;
+  overflow-y: show;
+  overflow-x: hidden;
+  &:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  &:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme: { colors } }) => colors.neutralColorMin300};
+    border-radius: 30px;
+    &:active {
+      background-color: ${({ theme: { colors } }) => colors.neutralColorMin200};
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme: { colors } }) => colors.neutralColorMax50};
+    background-clip: padding-box;
+  }
+`;
+
+export const ComboBoxOption = styled.li`
+  display: flex;
+  padding: 8px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: ${(props) => props.width || "100%"};
+  min-height: ${(props) => props.height || "43px"};
+  cursor: pointer;
+  font-size: ${({ theme: { fontSize } }) => fontSize.m};
+  color: ${({ theme: { colors } }) => colors.neutralColorMin100};
+  background: ${({ theme: { colors } }) => colors.neutralColorMax};
+  padding: 0px 8px;
+  font-weight: 400;
+  ${(props) => handleValidationState(props.isValid)}
+  border-bottom: 1px solid
+    ${({ theme: { colors } }) => colors.neutralColorMin400};
+  &:hover {
+    background-color: ${({ theme: { colors } }) => colors.neutralColorMax50};
+  }
 `;

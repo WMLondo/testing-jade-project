@@ -7,6 +7,12 @@ import {
   CheckboxInput,
   CheckboxLabel,
   CheckboxCheckmark,
+  ComboBoxContainer,
+  ComboBoxSelect,
+  ComboBoxSelectedOption,
+  ComboBoxOptionsContainer,
+  ComboBoxButton,
+  ComboBoxOption,
 } from "./Input.styles";
 
 export default Field;
@@ -29,4 +35,26 @@ export const Checkbox = (props) => (
   </CheckboxContainer>
 );
 
-export {};
+export const ComboBox = (props) => (
+  <ComboBoxContainer>
+    <ComboBoxSelect width={props.width} height={props.height}>
+      <ComboBoxSelectedOption>
+        {props.value || props.defaultValue}
+      </ComboBoxSelectedOption>
+      <ComboBoxButton onClick={props.click}>
+        <box-icon name="chevron-down" rotate={props.open && "180"}></box-icon>
+      </ComboBoxButton>
+    </ComboBoxSelect>
+    <ComboBoxOptionsContainer
+      opened={props.open}
+      width={props.width}
+      height={props.optionsHeight}
+      selectedHeight={props.height}
+    >
+      {props.options &&
+        props.options.map((option, index) => {
+          return <ComboBoxOption key={index}>{option.value}</ComboBoxOption>;
+        })}
+    </ComboBoxOptionsContainer>
+  </ComboBoxContainer>
+);
