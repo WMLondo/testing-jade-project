@@ -17,6 +17,8 @@ const Hero = () => {
           optionClassName={classes["option-card-1"]}
           title="Bienestar y relajación"
           buttonLabel="VER SERVICIOS"
+          imgHeight="610px"
+          imgWidth="100%"
         />
         <div className={classes["column-container"]}>
           <div className={classes["row-container"]}>

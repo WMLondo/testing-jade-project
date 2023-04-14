@@ -18,7 +18,9 @@ const QuickViewCard = ({ imageUrl, tagLabel, tagUrl, titleLabel }) => {
         borderRadius="12px 12px 0px 0px"
       />
       <ContentContainer>
-        <Tag url={tagUrl || "/"}>{tagLabel}</Tag>
+        <Tag url={tagUrl || "/"} w="67px" h="auto">
+          {tagLabel}
+        </Tag>
         <Title>{titleLabel}</Title>
         <Button>VISTA RAPIDA</Button>
       </ContentContainer>

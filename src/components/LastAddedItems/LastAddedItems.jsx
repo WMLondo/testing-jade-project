@@ -1,10 +1,10 @@
 import React from "react";
 import QuickViewCard from "../ui/Card/QuickViewCard/QuickViewCard";
-import classes from "./LastTendecy.module.css";
+import classes from "./LastAddedItems.module.css";
 
 const LastTendecy = () => {
   return (
-    <section className={classes["last-tendecy"]}>
+    <section className={classes["last-items"]}>
       <h2 className={classes.title}>Lo ultimo en cuidado de la piel</h2>
       <div className={classes.options}>
         <QuickViewCard

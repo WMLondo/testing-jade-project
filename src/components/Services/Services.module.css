@@ -1,12 +1,11 @@
-.last-tendecy {
+.services-section {
     height: auto;
-    background-color: #2C2C2C;
     display: flex;
     flex-direction: column;
     gap: 53px;
-    padding: 32px;
+    padding: 64px 32px;
     width: 100%;
-    min-height: 469px;
+    min-height: 600px;
     max-width: calc(100% - 64px);
 }
 
@@ -14,10 +13,10 @@
     font-weight: 700;
     font-size: 26px;
     line-height: 41px;
-    color: #ffffff;
+    color: #2c2c2c;
 }
 
-.options {
+.services {
     display: flex;
     flex-direction: row;
     justify-content: center;
