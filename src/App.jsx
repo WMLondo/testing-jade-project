@@ -1,41 +1,34 @@
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/Home/HomePage";
-import StorePage from "./pages/Store/StorePage";
+import Home from "./pages/Home/Home";
+import Store from "./pages/Store/Store";
+import Layout from "./pages/Layout/PageLayout";
+import SignIn from "./components/Login/Login";
+import SignUp from "./components/SignUp/SignUp";
 import { AuthProvider } from "./context/AuthContext";
-import SignUp from "./component/SignUp/SignUp";
-import Login from "./component/Login/Login";
-import Dashboard from "./pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
+    path: "",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "tienda",
+        element: <Store />,
+      },
+    ],
   },
-  ,
-  {
-    path: "/iniciar-sesion",
-    element: <Login />,
-  },
-  {
-    path: "/registrarme",
-    element: <SignUp />,
-  },
-  {
-    path: "/store",
-    element: <StorePage />,
-  },
-  {
-    path:"/dashboard",
-    element:<Dashboard/>
-  }
-  ,
+  { path: "iniciar-sesion", element: <SignIn /> },
+  { path: "registrarme", element: <SignUp /> },
 ]);
 
 function App() {
   return (
     <AuthProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}></RouterProvider>;
     </AuthProvider>
   );
 }

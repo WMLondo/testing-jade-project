@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Logo } from "../ui/ImageElement";
 import Alert from "../ui/Alert";
 import FormInput from "../FormInput/FormInput";
-import { NavLink,useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
 import { useAuth } from "../../context/AuthContext";
 
@@ -30,7 +30,7 @@ const Login = () => {
       await login(email, password);
       setEmail("");
       setPassword("");
-      navigate("/dashboard")
+      navigate("/tienda");
     } catch (e) {
       setError("Error al iniciar sesion.");
       console.log(e);

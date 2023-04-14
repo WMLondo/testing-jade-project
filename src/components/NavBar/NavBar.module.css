@@ -1,4 +1,4 @@
-.container {
+.container{
     width: 100%;
     max-width: 1440px;
     height: 180px;
@@ -9,40 +9,27 @@
     padding: 0px 32px;
 }
 
-.list {
-    list-style: none;
-}
-
-.link {
+.link{
     text-decoration: none;
-    color: var(--neutral-color-min);
+    color:var(--primary-color);
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    align-items: center;
+    text-decoration:none;
 }
 
-.link:hover,
-.link:hover>.list {
+.link:focus{
     text-decoration: underline;
-    color: var(--primary-color-300);
 }
 
-.link:active,
-.link:active>.list {
-    color: var(--primary-color-500)
+.link:hover{
+    text-decoration:underline;
 }
 
-.active {
-    color: var(--primary-color-500);
-}
 
-.icon {
+
+.icon{
     padding: 8px;
     height: 24px;
     width: 24px;

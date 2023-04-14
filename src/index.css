@@ -1,7 +1,42 @@
 :root{
-  --primary-color: #000;
-  --secondary-color: #fff;
-  --third-color: #006c3a;
+  /* Colors */
+  --neutral-color-max: #ffffff;
+  --neutral-color-max-50: #f1f1f1;
+  --neutral-color-max-100: #121212;
+  --neutral-color-min-100: #2c2c2c;
+  --neutral-color-min-200: #454545;
+  --neutral-color-min-300: #5e5e5e;
+  --neutral-color-min-400: #787878;
+  --primary-color-200: #10a282;
+  --primary-color-300: #10a26a;
+  --primary-color: #10a252;
+  --primary-color-500: #10a23a;
+  --primary-color-disabled: #52a384;
+  --danger-color: #a21010;
+  --danger-color-500: #a22910;
+  --danger-color-600: #8a0e0e;
+  --danger-color-disabled: #bd3939;
+
+  /* Gradients */
+  --primary-color-radial-gradient-500-to-400: radial-gradient(50% 50% at 50% 50%,
+      #10A23A 0%,
+      #10A252 100%);
+  --primary-color-linear-gradient-300-to-400-transform-180: linear-gradient(180deg,
+      #10A26A 0%,
+      #10A252 100%);
+  --danger-color-linear-gradient-500-to-400-transform-180: linear-gradient(180deg,
+      #A22910 0%,
+      #A21010 100%);
+
+  /* Fonts */
+  --font-family: "PTSans", sans-serif;
+
+  /* Font sizes */
+  --font-size-s: 13px;
+  --font-size-m: 16px;
+  --font-size-l: 20px;
+  --font-size-xl: 26px;
+  --font-size-xxl: 32px;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
