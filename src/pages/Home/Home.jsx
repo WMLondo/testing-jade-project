@@ -5,6 +5,8 @@ import Hero from "../../components/Hero/Hero";
 import LastTendecy from "../../components/LastAddedItems/LastAddedItems";
 import Services from "../../components/Services/Services";
 import Divider from "../../components/ui/Divider/Divider";
+import Tendecy from "../../components/Tendecy/Tendecy";
+import Guide from "../../components/Guides/Guide";
 
 const Home = () => {
   return (
@@ -13,6 +15,9 @@ const Home = () => {
       <LastTendecy />
       <Services />
       <Divider />
+      <Tendecy />
+      <Divider />
+      <Guide />
     </main>
   );
 };
