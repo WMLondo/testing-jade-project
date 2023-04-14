@@ -1,0 +1,28 @@
+.container{
+    color: var(--secondary-color);
+    background-color: var(--third-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.message_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .message_container span {
+    cursor: pointer;
+    color: #0077cc;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease-in
+  }  
