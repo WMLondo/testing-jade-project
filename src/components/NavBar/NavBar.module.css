@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 32px;
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--neutral-color-min);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+}
+
+.link:hover,
+.link:hover>.list {
+    text-decoration: underline;
+    color: var(--primary-color-300);
+}
+
+.link:active,
+.link:active>.list {
+    color: var(--primary-color-500)
+}
+
+.icon {
+    padding: 8px;
+    height: 24px;
+    width: 24px;
+}

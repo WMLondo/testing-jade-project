@@ -1,0 +1,60 @@
+.hero {
+    padding: 32px;
+    width: 100%;
+    max-width: calc(100% - 64px);
+    height: auto;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 8px;
+    height: 750px;
+    width: 100%;
+}
+
+.column-container {
+    display: flex;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row-container {
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.option-card-1 {
+    width: 332px;
+    height: 100%
+}
+
+.option-card-2 {
+    width: 680px;
+    height: 100%
+}
+
+.option-card-3 {
+    width: 332px;
+    height: 100%
+}
+
+.option-card-4 {
+    width: 332px;
+    height: 100%
+}
+
+.option-card-5 {
+    width: 680px;
+    height: 100%
+}

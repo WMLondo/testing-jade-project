@@ -1,0 +1,26 @@
+.last-tendecy {
+    height: auto;
+    background-color: #2C2C2C;
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+    padding: 32px;
+    width: 100%;
+    min-height: 469px;
+    max-width: calc(100% - 64px);
+}
+
+.title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 41px;
+    color: #ffffff;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
