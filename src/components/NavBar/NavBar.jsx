@@ -35,7 +35,7 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li className={classes.list}>
-        <NavLink className={classes.link} to="/marcas">
+        <NavLink className={classes.link} to="/tienda">
           Marcas
           <span className={classes.icon}>
             <box-icon name="chevron-down"></box-icon>

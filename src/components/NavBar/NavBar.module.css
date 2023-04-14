@@ -38,6 +38,10 @@
     color: var(--primary-color-500)
 }
 
+.active {
+    color: var(--primary-color-500);
+}
+
 .icon {
     padding: 8px;
     height: 24px;

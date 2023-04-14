@@ -1,9 +1,10 @@
-import "./App.css";
 import "boxicons";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Store from "./pages/Store/Store";
 import Layout from "./pages/Layout/PageLayout";
+import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,8 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { path: "iniciar-sesion", element: <SignIn /> },
+  { path: "registrarme", element: <SignUp /> },
 ]);
 
 function App() {
